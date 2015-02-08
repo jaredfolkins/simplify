@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 var a = []int{0, 9, 8, 3, 3, 3, 5, 9, 5, 0}
-var s = make([]int, len(a)/2+1) // scratch space for merge step
+var s = make([]int, len(a)/2+1)
 
 func main() {
 
@@ -28,7 +28,7 @@ func mergeSort(a []int) {
 		return
 
 	}
-	// merge step, with the copy-half optimization
+
 	copy(s, a[:mid])
 	l, r := 0, mid
 	for i := 0; ; i++ {
